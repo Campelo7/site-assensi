@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://assensiderm.com.br/sitemap.xml

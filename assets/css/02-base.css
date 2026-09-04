@@ -1,0 +1,113 @@
+/* ==========================================================
+   ASSENSI DERM — 02 BASE (FASE 2)
+   Grid, container, hierarquia, botões, links, imagens.
+   Nenhuma seção da Home aqui — só fundação reutilizável.
+   ========================================================== */
+
+/* ---------- Reset essencial ---------- */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  font-family:var(--font-sans);
+  background:var(--cream);
+  color:var(--ink);
+  font-size:var(--t-body);
+  line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--ink);color:var(--cream)}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;border-radius:4px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 18px;z-index:200;border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
+
+/* ---------- Container & Grid ---------- */
+.wrap{width:min(var(--max),92%);margin-inline:auto}
+.wrap-wide{width:min(var(--max-wide),94%);margin-inline:auto}
+section{position:relative}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.grid-2-tight{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:960px){.grid-2{grid-template-columns:1fr;gap:30px}}
+@media(max-width:900px){.grid-2-tight{grid-template-columns:1fr}}
+
+/* ---------- Section spacing ---------- */
+.section{padding:92px 0}
+.section-sm{padding:64px 0}
+@media(max-width:560px){.section{padding:64px 0}}
+
+/* ---------- Kicker / Headings ---------- */
+.kicker{font-size:var(--t-micro);font-weight:700;letter-spacing:var(--ls-kicker);text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.kicker::before{content:"";width:28px;height:1px;background:var(--rose)}
+.kicker.gold{color:var(--gold-deep)}
+.kicker.gold::before{background:var(--gold-deep)}
+.h-display{font-family:var(--font-serif);font-weight:500;font-size:var(--t-display);line-height:1.02;letter-spacing:-.01em}
+.h-display em,.h2 em{font-style:italic;font-weight:400;color:var(--gold-deep)}
+.h2{font-family:var(--font-serif);font-weight:500;font-size:var(--t-h2);line-height:var(--lh-tight);letter-spacing:-.01em}
+.h3{font-family:var(--font-serif);font-weight:500;font-size:var(--t-h3);line-height:1.1}
+.lead{color:var(--muted);font-size:17px;max-width:60ch;margin-top:14px}
+.center{text-align:center}
+.center .kicker{justify-content:center}
+.center .lead{margin-inline:auto}
+/* Hierarquia: H1 1× por página (hero) → H2 1× por seção → H3 itens. Nunca pular H1→H3. */
+
+/* ---------- Eyebrow (variante hero) ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:var(--t-micro);font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold-deep)}
+
+/* ---------- Links ---------- */
+a{transition:color var(--dur-fast) var(--ease)}
+.nav-link{font-size:12.5px;letter-spacing:var(--ls-nav);text-transform:uppercase;font-weight:600;color:var(--ink-2);position:relative;padding:6px 0}
+.nav-link::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold-deep);transition:width .3s var(--ease)}
+.nav-link:hover::after{width:100%}
+.link-underline{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--gold)}
+.link-underline:hover{color:#000}
+
+/* ---------- Buttons (3 variantes + 1 tamanho) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:var(--ls-btn);text-transform:uppercase;padding:16px 30px;border-radius:var(--r-full);transition:transform var(--dur-fast) var(--ease),background var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast),box-shadow var(--dur-fast);line-height:1;white-space:nowrap}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-outline{border:var(--border);color:var(--ink);background:transparent}
+.btn-outline:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#D6B998,#B8936B);color:#fff}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-sm{padding:13px 24px;font-size:12px}
+@media(max-width:560px){.btn-stack-mobile{flex:1;padding:17px 10px;font-size:12px}}
+
+/* ---------- Image treatment (assinatura editorial) ---------- */
+.media{overflow:hidden;background:var(--sand)}
+.media img{width:100%;height:100%;object-fit:cover}
+.media-arch{border-radius:var(--arch)}
+.media-round{border-radius:var(--r-lg)}
+.media-card{border-radius:var(--r-md)}
+.media-thumb{border-radius:var(--r-sm)}
+.media-zoom img{transition:transform .8s var(--ease)}
+.media-zoom:hover img{transform:scale(1.05)}
+.media-frame{position:relative}
+.media-frame::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.55);border-radius:var(--arch);pointer-events:none}
+/* Regra: foto premium = proporção vertical (4/5) no hero, 16/10 em resultados, 1/1 em minis. Sempre object-fit:cover + fundo sand como placeholder. */
+
+/* ---------- Cards (uso com moderação: luxo ≠ excesso de cards) ---------- */
+.card{background:var(--white);border:var(--border-soft);border-radius:var(--r-md);box-shadow:var(--shadow-sm)}
+.card-pad{padding:30px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);padding:8px 14px;border-radius:var(--r-full);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+/* ---------- Listas editoriais (tratamentos/jornada usam borda, não cards) ---------- */
+.row-list{border-top:var(--border)}
+.row-list > *{border-bottom:var(--border)}
+
+/* ---------- Motion base ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-img{clip-path:inset(6% 4% 6% 4% round 24px);opacity:0;transition:clip-path .9s var(--ease),opacity .7s}
+.reveal-img.visible{clip-path:inset(0 0 0 0 round 24px);opacity:1}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.reveal-img{opacity:1;transform:none;clip-path:none}
+}

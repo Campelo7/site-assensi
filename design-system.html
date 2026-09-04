@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assensi Derm — Design System (FASE 2)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/01-tokens.css">
+<link rel="stylesheet" href="./assets/css/02-base.css">
+<style>
+  .ds-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+  .ds-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .ds-nav b{font-family:var(--font-serif);font-size:20px;letter-spacing:.05em}
+  .ds-nav span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+  .sw{border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;background:#fff}
+  .sw i{display:block;height:72px}
+  .sw div{padding:10px 12px;font-size:12.5px}
+  .sw div b{display:block;font-size:13px}
+  .type-row{border-bottom:1px solid var(--line-soft);padding:18px 0}
+  .demo-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .demo-imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:16px}
+  .demo-imgs figure{margin:0}
+  .demo-imgs img{aspect-ratio:4/5}
+  .demo-imgs figcaption{font-size:12.5px;color:var(--muted);margin-top:8px}
+  .tok{font-family:ui-monospace,monospace;font-size:12px;background:#fff;border:1px solid var(--line-soft);padding:2px 8px;border-radius:99px;color:var(--gold-deep)}
+  .ds-sec{padding:56px 0;border-bottom:1px solid var(--line-soft)}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:800px){.cols2{grid-template-columns:1fr}}
+  code{background:#fff;border:1px solid var(--line-soft);border-radius:8px;padding:1px 7px;font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="ds-nav"><div class="wrap"><b>ASSENSI DERM</b><span>Design System — Fase 2 · sem seções da Home</span></div></div>
+
+<main class="wrap">
+  <div class="ds-sec">
+    <p class="kicker gold">01 — Grid / Container</p>
+    <h2 class="h2">Fundação, <em>não página.</em></h2>
+    <p class="lead">Container <code>min(1200px, 92%)</code> · wide <code>min(1340px, 94%)</code> · grid editorial 2 col (56px gap) · section <code>92px / 64px mobile</code>. Esta página usa apenas <span class="tok">01-tokens</span> + <span class="tok">02-base</span>.</p>
+  </div>
+
+  <div class="ds-sec">
+    <p class="kicker">02 — Cores (regra 70 / 20 / 10)</p>
+    <h3 class="h3">Neutros dominam, dourado pontua</h3>
+    <div class="swatches">
+      <div class="sw"><i style="background:#F8F5F1"></i><div><b>Cream</b>--cream · fundo</div></div>
+      <div class="sw"><i style="background:#F2ECE7"></i><div><b>Sand</b>--sand · alternado</div></div>
+      <div class="sw"><i style="background:#FFFFFF;border-bottom:1px solid var(--line-soft)"></i><div><b>White</b>--white · cards</div></div>
+      <div class="sw"><i style="background:#262321"></i><div><b>Ink</b>--ink · texto/botão</div></div>
+      <div class="sw"><i style="background:#716A65"></i><div><b>Muted</b>--muted · apoio</div></div>
+      <div class="sw"><i style="background:#C98F91"></i><div><b>Rose</b>--rose · só kicker</div></div>
+      <div class="sw"><i style="background:#E7C9C7"></i><div><b>Rose soft</b>números grandes</div></div>
+      <div class="sw"><i style="background:#C7A98A"></i><div><b>Gold</b>--gold · acento</div></div>
+      <div class="sw"><i style="background:#9D805E"></i><div><b>Gold deep</b>texto dourado</div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <p class="kicker">03 — Tipografia / Hierarquia</p>
+    <div class="type-row"><span class="eyebrow">Estética • Beleza • Naturalidade</span><h1 class="h-display" style="margin-top:10px">Display serif 44→76 <em>itálico dourado</em></h1><p class="lead">H1 — 1× por página (hero). Cormorant 500, tracking -0.01em.</p></div>
+    <div class="type-row"><h2 class="h2">H2 de seção 32→54 <em>com ênfase</em></h2><p class="lead">Lead Manrope 17px, muted, max 60ch. Hierarquia estrita: H1 → H2 → H3, sem saltos.</p></div>
+    <div class="type-row"><h3 class="h3">H3 editorial 24→32 — itens de lista</h3><p style="font-size:15.5px;color:var(--muted)">Corpo 16.5/1.65 · pequeno 15.5 · caption 13 · micro/kicker 12 + .26em tracking.</p></div>
+  </div>
+
+  <div class="ds-sec">
+    <p class="kicker gold">04 — Botões / Links</p>
+    <h3 class="h3">Três variantes, um gesto</h3>
+    <div class="demo-btns">
+      <a class="btn btn-dark" href="#">Agendar consulta</a>
+      <a class="btn btn-outline" href="#">Conhecer tratamentos</a>
+      <a class="btn btn-gold" href="#">Agendar consulta</a>
+      <a class="btn btn-dark btn-sm" href="#">Versão SM</a>
+    </div>
+    <p style="margin-top:16px"><a class="nav-link" href="#">Home</a> · <a class="nav-link" href="#">Tratamentos</a> · <a class="link-underline" href="#">link sublinhado dourado</a></p>
+    <p class="lead">Hover: <code>translateY(-2px)</code> + sombra md. Nada de escala exagerada. Foco sempre visível (anel gold-deep).</p>
+  </div>
+
+  <div class="ds-sec">
+    <p class="kicker">05 — Imagens / Cards / Bordas</p>
+    <div class="cols2">
+      <div class="card card-pad"><b>Card contido</b><p style="color:var(--muted);font-size:15px;margin-top:6px">Branco + <code>border-soft</code> + <code>shadow-sm</code> + <code>r-md 20px</code>. Uso com moderação — tratamentos usam <em>linha editorial</em>, não cards.</p></div>
+      <div class="card card-pad"><b>Bordas &amp; raios</b><p style="color:var(--muted);font-size:15px;margin-top:6px">full 999 · lg 22 · md 20 · sm 14 · <code>arch 999/999/28/28</code> (hero). Linha <code>rgba(38,35,33,.12)</code>.</p></div>
+    </div>
+    <div class="demo-imgs">
+      <figure><div class="media media-arch media-frame media-zoom" style="aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=70" alt="Exemplo de tratamento arco"></div><figcaption>Arco editorial + moldura interna (hero)</figcaption></figure>
+      <figure><div class="media media-round media-zoom" style="aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=70" alt="Exemplo de tratamento arredondado" loading="lazy"></div><figcaption>Round 22px + zoom 1.05 (clínica)</figcaption></figure>
+      <figure><div class="media media-thumb" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=70" alt="Exemplo de thumb" loading="lazy"></div><figcaption>Thumb 14px, sem zoom (listas)</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <p class="kicker gold">06 — Spacing / Breakpoints / Motion</p>
+    <p class="lead">Escala <code>4·8·12·16·20·24·32·40·48·64·80·96</code>. Section <code>92px desktop / 64px mobile</code>. Breakpoints: <code>560 · 640 · 860 · 900 · 960 · 1020</code> (burger). Motion: <code>ease cubic-bezier(.22,.61,.21,1)</code>, <code>250/350/700ms</code>, reveal <code>translateY(26px)</code> + clip-path em imagem. <code>prefers-reduced-motion</code> desarma tudo.</p>
+    <p class="lead">Sombras: <code>sm 10/30/.07</code> · <code>md 24/60/.10</code> — luxo = pouco relevo. Sem glassmorphism, sem gradiente rosa, sem sombra pesada.</p>
+  </div>
+</main>
+</body>
+</html>

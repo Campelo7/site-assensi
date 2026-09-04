@@ -1,0 +1,97 @@
+/* ==========================================================
+   ASSENSI DERM — 01 TOKENS (FASE 2)
+   Fonte única de verdade visual. Nada de hex solto nas sections.
+   ========================================================== */
+:root{
+  /* ---------- Colors: neutros (70%) ---------- */
+  --cream:#F8F5F1;      /* fundo principal */
+  --sand:#F2ECE7;       /* fundo alternado / placeholder imagem */
+  --white:#FFFFFF;      /* superfícies / cards */
+  --ink:#262321;        /* texto + botões primários */
+  --ink-2:#3A3532;      /* texto secundário forte */
+  --muted:#716A65;      /* texto de apoio / legendas */
+  --muted-2:#9A918B;    /* números editoriais, bordas suaves */
+
+  /* ---------- Colors: acentos (10% máx) ---------- */
+  --rose:#C98F91;       /* kicker, micro-labels — nunca áreas grandes */
+  --rose-soft:#E7C9C7;  /* números grandes, detalhes */
+  --gold:#C7A98A;       /* acento principal */
+  --gold-deep:#9D805E;  /* texto dourado legível + hover */
+  --gold-soft:#EFE3D3;  /* fundos quentes sutis */
+
+  /* ---------- Lines & borders ---------- */
+  --line:rgba(38,35,33,.12);
+  --line-soft:rgba(38,35,33,.08);
+  --border:1px solid var(--line);
+  --border-soft:1px solid var(--line-soft);
+
+  /* ---------- Radius ---------- */
+  --r-full:999px;   /* botões, pills, avatar */
+  --r-lg:22px;      /* blocos de imagem grandes */
+  --r-md:20px;      /* cards / painéis */
+  --r-sm:14px;      /* thumbs, mini-cards */
+  --radius:var(--r-md);
+  --radius-sm:var(--r-sm);
+  --arch:999px 999px 28px 28px; /* assinatura editorial do hero */
+
+  /* ---------- Shadows (contidas: luxo = pouco relevo) ---------- */
+  --shadow-sm:0 10px 30px rgba(38,35,33,.07);
+  --shadow-md:0 24px 60px rgba(38,35,33,.10);
+  --shadow-none:none;
+
+  /* ---------- Spacing scale (4pt base, passos editoriais) ---------- */
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:20px;
+  --s-6:24px; --s-8:32px; --s-10:40px; --s-12:48px;
+  --s-16:64px; --s-20:80px; --s-24:96px;
+
+  /* ---------- Layout ---------- */
+  --max:1200px;          /* container leitura ideal */
+  --max-wide:1340px;     /* blocos full-bleed contidos (ex: filosofia) */
+  --gutter:4%;           /* respiro lateral mobile→desktop via min() */
+  --header-h:76px;
+  --header-h-scrolled:64px;
+
+  /* ---------- Typography ---------- */
+  --font-serif:"Cormorant Garamond",Georgia,serif;
+  --font-sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  /* Escala fluida: mobile → desktop sem breakpoints bruscos */
+  --t-display:clamp(44px,5.6vw,76px);  /* H1 hero */
+  --t-h2:clamp(32px,4vw,54px);         /* títulos de seção */
+  --t-h3:clamp(24px,2.6vw,32px);       /* itens editoriais */
+  --t-quote:clamp(22px,2.8vw,32px);    /* depoimentos */
+  --t-philo:clamp(30px,3.6vw,48px);    /* citação filosofia */
+  --t-body:16.5px;
+  --t-small:15.5px;
+  --t-caption:13px;
+  --t-micro:12px;                      /* kickers, labels */
+
+  --lh-tight:1.08;   /* headings */
+  --lh-snug:1.15;    /* citações */
+  --lh-body:1.65;    /* texto corrido */
+  --lh-loose:1.8;    /* listas longas, se houver */
+
+  --ls-kicker:.26em;  /* kickers */
+  --ls-nav:.16em;     /* navegação / botões */
+  --ls-btn:.14em;
+
+  /* ---------- Motion ---------- */
+  --ease:cubic-bezier(.22,.61,.21,1);
+  --dur-fast:.25s;
+  --dur-med:.35s;
+  --dur-slow:.7s;
+
+  /* ---------- Z-index ---------- */
+  --z-header:90;
+  --z-menu:120;
+  --z-float:80;
+
+  /* ---------- Breakpoints (referência — usar em media queries) ----------
+     560px  → mobile pequeno (CTA empilha, journey 1col)
+     640px  → mobile largo (announce reduz)
+     860px  → trust 2col
+     900px  → clínica/jornada/philosophy empilham
+     960px  → about/resultados/CTA empilham
+     1020px → nav desktop → burger
+  --------------------------------------------------------------- */
+}
