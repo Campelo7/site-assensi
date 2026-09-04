@@ -49,6 +49,10 @@
       });
     }, {threshold:.12, rootMargin:"0px 0px -6% 0px"});
     revealEls.forEach(function(el){ io.observe(el); });
+    // Fallback: se após 1s ainda houver reveals ocultos (ex: mobile sem scroll), mostra tudo
+    setTimeout(function(){
+      revealEls.forEach(function(el){ if(!el.classList.contains("visible")) el.classList.add("visible"); });
+    }, 1000);
   }
 
   // Footer year
