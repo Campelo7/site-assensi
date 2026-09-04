@@ -165,6 +165,11 @@ section{position:relative}
 .marquee-track span{font-family:var(--font-serif);font-size:19px;font-style:italic;letter-spacing:.06em;white-space:nowrap;padding-right:18px}
 .marquee-track b{color:var(--ink);opacity:.55;font-weight:400;font-style:normal;padding-right:18px;align-self:center}
 @keyframes mq{to{transform:translateX(-50%)}}
+@media(max-width:640px){
+  .marquee{padding:11px 0}
+  .marquee-track{animation-duration:60s}
+  .marquee-track span{font-size:16px}
+}
 
 /* ---------- Trust ---------- */
 .trust{border-bottom:1px solid var(--line-soft);background:var(--paper);margin-top:0}
