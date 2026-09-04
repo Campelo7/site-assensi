@@ -167,12 +167,12 @@ section{position:relative}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media(max-width:640px){
   .marquee{padding:11px 0}
-  .marquee-track{animation-duration:85s}
+  .marquee-track{animation-duration:140s}
   .marquee:active .marquee-track{animation-play-state:paused}
   .marquee-track span{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){
-  .marquee-track{animation-duration:120s}
+  .marquee-track{animation-duration:180s}
 }
 
 /* ---------- Trust ---------- */
