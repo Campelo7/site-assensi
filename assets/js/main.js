@@ -159,11 +159,11 @@
     media.addEventListener("mouseleave", onLeave);
   })();
 
-  // Treatments rows -> WhatsApp with prefilled text
+  // Treatments rows + Frentes -> WhatsApp with prefilled text
   var wa = "https://wa.me/5500000000000?text=";
-  document.querySelectorAll(".treat-row").forEach(function(row){
+  document.querySelectorAll(".treat-row,.frente-card").forEach(function(row){
     row.addEventListener("click", function(){
-      var t = row.getAttribute("data-treatment") || "avaliação personalizada";
+      var t = row.getAttribute("data-treatment") || row.getAttribute("data-frente") || "avaliação personalizada";
       window.open(wa + encodeURIComponent("Olá! Quero agendar uma avaliação sobre: " + t + " — Assensi Derm"), "_blank", "noopener");
     });
     row.addEventListener("keydown", function(e){
@@ -171,10 +171,11 @@
     });
   });
 
-  // About specialists carousel (Vanessa / Thais)
+  // About specialists carousel — fotos + bios sincronizados (Josilene, Thais, Vanessa)
   (function(){
     var slides = Array.prototype.slice.call(document.querySelectorAll(".about-slide"));
     if(!slides.length) return;
+    var bios = Array.prototype.slice.call(document.querySelectorAll(".about-bio"));
     var dotsWrap = document.getElementById("about-dots");
     var prev = document.getElementById("about-prev");
     var next = document.getElementById("about-next");
@@ -182,6 +183,7 @@
     var idx = 0;
     function render(){
       slides.forEach(function(s,k){ s.classList.toggle("active", k===idx); });
+      bios.forEach(function(b,k){ b.classList.toggle("active", k===idx); });
       if(dotsWrap){
         Array.prototype.forEach.call(dotsWrap.children, function(d,k){
           d.classList.toggle("active", k===idx);
