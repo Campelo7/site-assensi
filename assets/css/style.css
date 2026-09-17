@@ -125,9 +125,9 @@ section{position:relative}
 .hero-proof div+div{border-left:1px solid var(--line-soft);padding-left:28px}
 .hero-media{position:relative;z-index:1;margin-top:6px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .hero-arch{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:3/4.2;max-height:560px;width:100%;background:var(--sand);box-shadow:var(--shadow-md);transition:transform .35s ease-out,box-shadow .35s var(--ease);will-change:transform}
-/* desconstruído — rotações e alturas irregulares (2 fotos hero) */
-.hero-arch:nth-child(1){transform:rotate(-1.6deg) translateY(6px);aspect-ratio:3/4.4}
-.hero-arch:nth-child(2){aspect-ratio:3/3.9}
+/* hero — duas fotos mesmo tamanho */
+.hero-arch:nth-child(1){transform:rotate(-1.6deg) translateY(6px)}
+.hero-arch:nth-child(2){transform:rotate(1.4deg) translateY(-4px)}
 .hero-media:hover .hero-arch{box-shadow:0 32px 80px rgba(32,27,23,.18)}
 .hero-arch img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transform:scale(1.04)}
 .hero-arch:nth-child(2) img{object-position:center 24%}
