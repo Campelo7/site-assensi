@@ -171,7 +171,7 @@
     });
   });
 
-  // About specialists carousel — fotos + bios sincronizados (Josilene, Thais, Vanessa)
+  // About specialists carousel — fotos + bios sincronizados (Josi, Thais, Vanessa)
   (function(){
     var slides = Array.prototype.slice.call(document.querySelectorAll(".about-slide"));
     if(!slides.length) return;
